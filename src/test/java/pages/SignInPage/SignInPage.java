@@ -21,11 +21,14 @@ public class SignInPage extends BasePage {
     }
 
     private By signInButton = By.id("btn1");
+    private By skipSignInButton = By.id("btn2");
     private By logo = By.id("logo");
     private By signInEmailField = By.xpath("//input[@placeholder='E mail']");
     private By signInPasswordField = By.xpath("//input[@placeholder='Password']");
     private By enterButton = By.id("enterbtn");
     private By errorMsg = By.id("errormsg");
+    private By signUpEmailField = By.id("email");
+    private By enterSignUpButton = By.id("enterimg");
 
     public boolean isSignInButtonDisplayed() {
         LOG.info("Verify if 'Sign in' button is displayed");
@@ -35,6 +38,11 @@ public class SignInPage extends BasePage {
     public void clickSignInButton() {
         LOG.info("Click 'Sign in' button");
         driver.findElement(signInButton).click();
+    }
+
+    public void clickSkipSignInButton() {
+        LOG.info("Click 'Skip Sign in' button");
+        driver.findElement(skipSignInButton).click();
     }
 
     public boolean isLogoDisplayed() {
@@ -60,6 +68,21 @@ public class SignInPage extends BasePage {
     public boolean isErrorMessageDisplayed() {
         LOG.info("Verifying if error message is displayed");
         return driver.findElement(errorMsg).isDisplayed();
+    }
+
+    public void typeInSignUpEmailField(String email) {
+        LOG.info("Typing email address in 'Sign Up' field");
+        driver.findElement(signUpEmailField).sendKeys(email);
+    }
+
+    public void clickBack() {
+        LOG.info("Click back in browser");
+        driver.navigate().back();
+    }
+
+    public void clickEnterSignUpButton() {
+        LOG.info("Click 'Enter SIgn Up' button");
+        driver.findElement(enterSignUpButton).click();
     }
 
 
