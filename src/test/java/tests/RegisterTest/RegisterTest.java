@@ -18,6 +18,14 @@ public class RegisterTest extends BaseTest {
     String adress = "Cluj, Strada Primaverii, Nt 407 J";
     String email = "Automation7@domain.com";
     String phone = "0748955748";
+    String language = "Romanian";
+    String skill = "Java";
+    String country = "India";
+    String year = "1991";
+    String month = "February";
+    String day = "7";
+    String pas = "parola";
+    String confirmPass = "parola";
 
     @Test
     public void register() {
@@ -44,6 +52,21 @@ public class RegisterTest extends BaseTest {
         registerPage.setCricket();
         registerPage.seMovies();
         registerPage.setHockey();
+
+        LOG.info("Select a Language");
+        registerPage.selectLanguage(language);
+
+        LOG.info("Select a Skill");
+        registerPage.setSkills(skill);
+
+        LOG.info("Select a Country");
+        registerPage.selectCountry(country);
+
+        LOG.info("Select Date of Birth");
+        registerPage.setDateOfBirth(year, month, day);
+
+        LOG.info("Set Password");
+        registerPage.setPassword(pas, confirmPass);
 
     }
 }
