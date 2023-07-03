@@ -68,5 +68,11 @@ public class RegisterTest extends BaseTest {
         LOG.info("Set Password");
         registerPage.setPassword(pas, confirmPass);
 
+        LOG.info("Choose a file");
+        registerPage.setChooseFile();
+
+        LOG.info("Click submit button");
+        registerPage.clickSubmitButton();
+
     }
 }

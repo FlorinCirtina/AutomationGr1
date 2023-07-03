@@ -2,6 +2,7 @@ package pages.RegisterPage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,6 +42,8 @@ public class RegisterPage extends BasePage {
     private By selectDay = By.id("daybox");
     private By password = By.id("firstpassword");
     private By confirmPassword = By.id("secondpassword");
+    private By chooseFileBtn = By.id("imagesrc");
+    private By submitButton = By.id("submitbtn");
 
     public void typeInFirstName(String fName) {
         LOG.info("Type in FirstName");
@@ -127,5 +130,15 @@ public class RegisterPage extends BasePage {
         driver.findElement(confirmPassword).sendKeys(confirmPass);
     }
 
+    public void setChooseFile() {
+        LOG.info("Upload a File");
+        WebElement fileChoose = driver.findElement(chooseFileBtn);
+        fileChoose.sendKeys("C://Img//download.png");
+    }
+
+    public void clickSubmitButton() {
+        LOG.info("CLick the Submit button");
+        driver.findElement(submitButton).click();
+    }
 
 }
